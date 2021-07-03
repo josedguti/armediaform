@@ -11,9 +11,12 @@ import { ConfirmedValidator } from './confirmed.validator';
 export class AppComponent {
   form: FormGroup = new FormGroup({});
   
+  
+
   constructor(private fb: FormBuilder) {
   
     this.form = fb.group({
+      email: new FormControl,
       password: ['', [Validators.required]],
       confirm_password: ['', [Validators.required]]
     }, { 
