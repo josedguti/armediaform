@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "email": "josepmind@gmail.com",
+      "subscription": "",
+      "password": "hola123$"
+    },
+    {
+      "id": 3,
+      "email": "marina@marina.com",
+      "subscription": "",
+      "password": "hola123$"
+    },
+    {
+      "id": 4,
+      "email": "franco@gmail.com",
+      "subscription": "",
+      "password": "hola123$",
+      "date": ""
+    },
+    {
+      "id": 5,
+      "email": "josepmind@gmail.com",
+      "subscription": "Advanced",
+      "password": "hola123$",
+      "date": ""
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
