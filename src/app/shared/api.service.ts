@@ -10,14 +10,14 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   postData(data: any) {
-    return this.http.post<any>('http://localhost:3000/posts', data)
+    return this.http.post<any>('https://armedia-json-server.herokuapp.com/posts', data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
 
   getData(){
-    return this.http.get<any>('http://localhost:3000/posts')
+    return this.http.get<any>('https://armedia-json-server.herokuapp.com/posts')
     .pipe(map((res:any)=>{
       return res;
     }))
