@@ -51,7 +51,9 @@ export class AppComponent {
     .subscribe((res: any)=>{
       console.log(res);
       alert('data added successfully')
-      this.armediaform.reset();
+      this.armediaform.controls['email'].reset();
+      this.armediaform.controls['password'].reset();
+      this.armediaform.controls['confirm_password'].reset();
     })
     console.log(this.armediaform.value);
 
@@ -61,7 +63,9 @@ export class AppComponent {
 
   reset(){
     if (confirm('Are you sure you want to discard the changes?')) {
-      this.armediaform.reset();
+      this.armediaform.controls['email'].reset();
+      this.armediaform.controls['password'].reset();
+      this.armediaform.controls['confirm_password'].reset();
       console.log('form was reset')
     } else {
       console.log('form was not reset')

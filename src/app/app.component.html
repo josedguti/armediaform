@@ -4,15 +4,15 @@
   <form [formGroup]="armediaform">
     <div 
     class="alert alert-danger mt-1" 
-    *ngIf='f.email.invalid && f.email.touched'
+    *ngIf='f.email.invalid && f.email.touched && f.email.dirty'
     >
         Your email is not valid
     </div>
-    <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger mt-1">
+    <div *ngIf="f.password.touched && f.password.invalid && f.password.dirty" class="alert alert-danger mt-1">
         <div *ngIf="f.password.errors.required">Password is required.</div>
         <div *ngIf="f.password.errors.pattern">Password is not valid.</div>
     </div>
-    <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger mt-1">
+    <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid && f.confirm_password.dirty" class="alert alert-danger mt-1">
         <div *ngIf="f.confirm_password.errors.required">Confirm Password is required.</div>
         <div *ngIf="f.confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div>
         <div *ngIf="f.confirm_password.errors.pattern">Confirm Password is not valid.</div>
@@ -32,7 +32,7 @@
              >
              <div 
              class="alert alert-danger mt-1" 
-             *ngIf='f.email.invalid && f.email.touched'
+             *ngIf='f.email.invalid && f.email.touched && f.email.dirty'
              >
                  Your email is not valid
              </div>
@@ -62,7 +62,7 @@
               class="form-control"
               pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8}$"
               >
-          <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger mt-1">
+          <div *ngIf="f.password.touched && f.password.invalid && f.password.dirty" class="alert alert-danger mt-1">
               <div *ngIf="f.password.errors.required">Password is required.</div>
               <div *ngIf="f.password.errors.pattern">Password is not valid.</div>
           </div>
@@ -78,7 +78,7 @@
               class="form-control"
               pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8}$"
               >
-          <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger mt-1">
+          <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid && f.confirm_password.dirty" class="alert alert-danger mt-1">
               <div *ngIf="f.confirm_password.errors.required">Confirm Password is required.</div>
               <div *ngIf="f.confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div>
               <div *ngIf="f.confirm_password.errors.pattern">Confirm Password is not valid.</div>
