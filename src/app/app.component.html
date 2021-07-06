@@ -1,7 +1,22 @@
 <div class="container">
   <h1>Armedia Form</h1>
      
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="armediaform">
+    <div 
+    class="alert alert-danger mt-1" 
+    *ngIf='f.email.invalid && f.email.touched'
+    >
+        Your email is not valid
+    </div>
+    <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger mt-1">
+        <div *ngIf="f.password.errors.required">Password is required.</div>
+        <div *ngIf="f.password.errors.pattern">Password is not valid.</div>
+    </div>
+    <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger mt-1">
+        <div *ngIf="f.confirm_password.errors.required">Confirm Password is required.</div>
+        <div *ngIf="f.confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div>
+        <div *ngIf="f.confirm_password.errors.pattern">Confirm Password is not valid.</div>
+    </div>
          <div class="form-group">
              <label for="email">Email</label>
              <input 
@@ -10,8 +25,10 @@
              name="email"
              formControlName='email'
              required
-             email
              id="email"
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+             email
+             #email
              >
              <div 
              class="alert alert-danger mt-1" 
@@ -27,6 +44,7 @@
              class="form-select" 
              required
              formControlName='subscription'
+             #subscription
              >
                  <option value="Advanced" selected>Advanced</option>
                  <option value="Basic">Basic</option>
@@ -68,14 +86,36 @@
       </div>
 
       <input 
-      type="time" 
-      name="timestamp" 
-      step="1" 
+      type="date"
       hidden
       formControlName='date'>
 
-      <button class="btn btn-primary"  type="submit" [disabled]="!form.valid">Submit</button>
+      <button class="btn btn-primary mt-2"  type="button" [disabled]="!armediaform.valid" (click)='addForm()'>Submit</button>&nbsp;
     
-      <button class="btn btn-warning" type="reset">Clear</button>
+      <button class="btn btn-warning mt-2" type="button" (click)='reset()'>Clear</button>
   </form>
+
+
+
+  <table class="table table-bordered mt-5">
+    <thead>
+      <tr>
+        <th>Email Address</th>
+        <th>Subscription Type</th>
+        <th>Start Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let item of listData'>
+        <td><span>{{ item.email }}</span></td>
+        <td><span>{{ item.subscription }}</span></td>
+        <td><span>{{ item.date }}</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
 </div>
+
+
