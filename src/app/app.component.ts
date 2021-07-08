@@ -51,13 +51,17 @@ export class AppComponent {
     .subscribe((res: any)=>{
       console.log(res);
       alert('data added successfully')
-      this.armediaform.controls['email'].reset();
-      this.armediaform.controls['password'].reset();
-      this.armediaform.controls['confirm_password'].reset();
     })
     console.log(this.armediaform.value);
 
     this.listData.push(this.armediaform.value);
+
+    this.armediaform.controls['email'].reset();
+    this.armediaform.controls['password'].reset();
+    this.armediaform.controls['confirm_password'].reset();
+    this.armediaform.patchValue({
+      subscription: 'Advanced'
+    });
    
   }
 
@@ -66,6 +70,9 @@ export class AppComponent {
       this.armediaform.controls['email'].reset();
       this.armediaform.controls['password'].reset();
       this.armediaform.controls['confirm_password'].reset();
+      this.armediaform.patchValue({
+        subscription: 'Advanced'
+      });
       console.log('form was reset')
     } else {
       console.log('form was not reset')
