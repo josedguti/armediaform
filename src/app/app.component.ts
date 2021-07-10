@@ -10,7 +10,7 @@ import { FormModel } from './formdata.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  
   armediaform: FormGroup;
   
   formModelObj : FormModel = new FormModel();

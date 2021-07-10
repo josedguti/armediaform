@@ -10,7 +10,7 @@
     </div>
     <div *ngIf="f.password.touched && f.password.invalid && f.password.dirty" class="alert alert-danger mt-1">
         <div *ngIf="f.password.errors.required">Password is required.</div>
-        <div *ngIf="f.password.errors.pattern">Password is not valid.</div>
+        <div *ngIf="f.password.errors.pattern">Password Must be 8 characters long, one special character, one number and and regular character.</div>
     </div>
     <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid && f.confirm_password.dirty" class="alert alert-danger mt-1">
         <div *ngIf="f.confirm_password.errors.required">Confirm Password is required.</div>
@@ -54,6 +54,7 @@
 
       <div class="form-group">
           <label for="password">Password</label>
+          <label>Password Must be 8 characters long, one special character, one number and and regular character.</label>
           <input 
               formControlName="password"
               id="password" 
@@ -64,7 +65,7 @@
               >
           <div *ngIf="f.password.touched && f.password.invalid && f.password.dirty" class="alert alert-danger mt-1">
               <div *ngIf="f.password.errors.required">Password is required.</div>
-              <div *ngIf="f.password.errors.pattern">Password is not valid.</div>
+              <div *ngIf="f.password.errors.pattern">Password Must be 8 characters long, one special character, one number and and regular character.</div>
           </div>
       </div>
 
